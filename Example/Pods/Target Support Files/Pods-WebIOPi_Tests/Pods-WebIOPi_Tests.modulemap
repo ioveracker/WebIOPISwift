@@ -1,0 +1,6 @@
+framework module Pods_WebIOPi_Tests {
+  umbrella header "Pods-WebIOPi_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

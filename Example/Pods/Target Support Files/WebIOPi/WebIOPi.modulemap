@@ -1,0 +1,6 @@
+framework module WebIOPi {
+  umbrella header "WebIOPi-umbrella.h"
+
+  export *
+  module * { export * }
+}

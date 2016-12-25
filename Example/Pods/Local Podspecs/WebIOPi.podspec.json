@@ -1,0 +1,22 @@
+{
+  "name": "WebIOPi",
+  "version": "0.1.0",
+  "summary": "A short description of WebIOPi.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/WebIOPi",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Isaac Overacker": "ioveracker@cbtnuggets.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/WebIOPi.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "WebIOPi/Classes/**/*"
+}
