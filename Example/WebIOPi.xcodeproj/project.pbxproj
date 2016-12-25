@@ -15,7 +15,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		7829F96E1E0F84EF000B7927 /* WebIOPi.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 7829F96D1E0F84EF000B7927 /* WebIOPi.podspec */; };
+		7829F9731E0F94C5000B7927 /* WebIOPi.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 7829F9721E0F94C5000B7927 /* WebIOPi.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		617BE2F178E6CF74C22A35D5 /* Pods_WebIOPi_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebIOPi_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BCFF3EC57EF01C244B9F55 /* Pods-WebIOPi_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebIOPi_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebIOPi_Tests/Pods-WebIOPi_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		7829F96D1E0F84EF000B7927 /* WebIOPi.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; path = WebIOPi.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = "<none>"; };
+		7829F9721E0F94C5000B7927 /* WebIOPi.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebIOPi.podspec; sourceTree = "<group>"; };
 		B09348AFB1A285AEDC30F031 /* Pods-WebIOPi_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebIOPi_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebIOPi_Example/Pods-WebIOPi_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B1DC249A58761E5310752808 /* Pods-WebIOPi_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebIOPi_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebIOPi_Tests/Pods-WebIOPi_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E26F90FD563300E8C46A8D2B /* Pods-WebIOPi_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebIOPi_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebIOPi_Example/Pods-WebIOPi_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				7829F96D1E0F84EF000B7927 /* WebIOPi.podspec */,
+				7829F9721E0F94C5000B7927 /* WebIOPi.podspec */,
 				5449668632D63C99757EE2E3 /* README.md */,
 				1ED3F17AB187DEC1A0E45472 /* LICENSE */,
 			);
@@ -252,7 +252,7 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				7829F96E1E0F84EF000B7927 /* WebIOPi.podspec in Resources */,
+				7829F9731E0F94C5000B7927 /* WebIOPi.podspec in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
