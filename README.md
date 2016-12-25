@@ -1,6 +1,6 @@
 # WebIOPi
 
-[![CI Status](http://img.shields.io/travis/ioveracker/WebIOPi.svg?style=flat)](https://travis-ci.org/ioveracker/WebIOPiSwift)
+[![Build Status](https://travis-ci.org/ioveracker/WebIOPiSwift.svg?branch=master)](https://travis-ci.org/ioveracker/WebIOPiSwift)
 [![Version](https://img.shields.io/cocoapods/v/WebIOPi.svg?style=flat)](http://cocoapods.org/pods/WebIOPi)
 [![License](https://img.shields.io/cocoapods/l/WebIOPi.svg?style=flat)](http://cocoapods.org/pods/WebIOPi)
 [![Platform](https://img.shields.io/cocoapods/p/WebIOPi.svg?style=flat)](http://cocoapods.org/pods/WebIOPi)
