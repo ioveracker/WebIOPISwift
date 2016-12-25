@@ -1099,6 +1099,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3488F797BB8916898977909FEC20B35A /* WebIOPi.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1249,6 +1250,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3488F797BB8916898977909FEC20B35A /* WebIOPi.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
