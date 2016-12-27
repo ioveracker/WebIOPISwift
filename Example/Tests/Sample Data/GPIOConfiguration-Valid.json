@@ -1,0 +1,224 @@
+{
+    "GPIO": {
+        "0": {
+            "function": "ALT0",
+            "value": 1
+        },
+        "1": {
+            "function": "ALT0",
+            "value": 1
+        },
+        "10": {
+            "function": "IN",
+            "value": 0
+        },
+        "11": {
+            "function": "IN",
+            "value": 0
+        },
+        "12": {
+            "function": "IN",
+            "value": 0
+        },
+        "13": {
+            "function": "IN",
+            "value": 0
+        },
+        "14": {
+            "function": "ALT0",
+            "value": 1
+        },
+        "15": {
+            "function": "ALT0",
+            "value": 1
+        },
+        "16": {
+            "function": "OUT",
+            "value": 1
+        },
+        "17": {
+            "function": "IN",
+            "value": 0
+        },
+        "18": {
+            "function": "IN",
+            "value": 0
+        },
+        "19": {
+            "function": "IN",
+            "value": 0
+        },
+        "2": {
+            "function": "IN",
+            "value": 1
+        },
+        "20": {
+            "function": "IN",
+            "value": 0
+        },
+        "21": {
+            "function": "OUT",
+            "value": 0
+        },
+        "22": {
+            "function": "IN",
+            "value": 0
+        },
+        "23": {
+            "function": "IN",
+            "value": 0
+        },
+        "24": {
+            "function": "IN",
+            "value": 0
+        },
+        "25": {
+            "function": "IN",
+            "value": 0
+        },
+        "26": {
+            "function": "IN",
+            "value": 0
+        },
+        "27": {
+            "function": "IN",
+            "value": 0
+        },
+        "28": {
+            "function": "IN",
+            "value": 0
+        },
+        "29": {
+            "function": "IN",
+            "value": 0
+        },
+        "3": {
+            "function": "IN",
+            "value": 1
+        },
+        "30": {
+            "function": "IN",
+            "value": 0
+        },
+        "31": {
+            "function": "IN",
+            "value": 0
+        },
+        "32": {
+            "function": "IN",
+            "value": 0
+        },
+        "33": {
+            "function": "IN",
+            "value": 0
+        },
+        "34": {
+            "function": "IN",
+            "value": 1
+        },
+        "35": {
+            "function": "IN",
+            "value": 1
+        },
+        "36": {
+            "function": "IN",
+            "value": 1
+        },
+        "37": {
+            "function": "IN",
+            "value": 0
+        },
+        "38": {
+            "function": "IN",
+            "value": 0
+        },
+        "39": {
+            "function": "IN",
+            "value": 0
+        },
+        "4": {
+            "function": "IN",
+            "value": 1
+        },
+        "40": {
+            "function": "ALT0",
+            "value": 0
+        },
+        "41": {
+            "function": "IN",
+            "value": 0
+        },
+        "42": {
+            "function": "IN",
+            "value": 0
+        },
+        "43": {
+            "function": "IN",
+            "value": 0
+        },
+        "44": {
+            "function": "IN",
+            "value": 0
+        },
+        "45": {
+            "function": "ALT0",
+            "value": 0
+        },
+        "46": {
+            "function": "IN",
+            "value": 1
+        },
+        "47": {
+            "function": "IN",
+            "value": 0
+        },
+        "48": {
+            "function": "ALT0",
+            "value": 0
+        },
+        "49": {
+            "function": "ALT0",
+            "value": 1
+        },
+        "5": {
+            "function": "OUT",
+            "value": 0
+        },
+        "50": {
+            "function": "ALT0",
+            "value": 1
+        },
+        "51": {
+            "function": "ALT0",
+            "value": 1
+        },
+        "52": {
+            "function": "ALT0",
+            "value": 1
+        },
+        "53": {
+            "function": "ALT0",
+            "value": 1
+        },
+        "6": {
+            "function": "OUT",
+            "value": 1
+        },
+        "7": {
+            "function": "IN",
+            "value": 1
+        },
+        "8": {
+            "function": "IN",
+            "value": 1
+        },
+        "9": {
+            "function": "IN",
+            "value": 0
+        }
+    },
+    "I2C": 0,
+    "ONEWIRE": 0,
+    "SPI": 0,
+    "UART": 1
+}
