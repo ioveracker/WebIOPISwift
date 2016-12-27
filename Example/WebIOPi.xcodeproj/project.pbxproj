@@ -10,14 +10,14 @@
 		2628D88D4506265E902A571F /* Pods_WebIOPi_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617BE2F178E6CF74C22A35D5 /* Pods_WebIOPi_Example.framework */; };
 		3F53BDA6577D3381AD30E3EC /* Pods_WebIOPi_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6BEDDB7B0BC99EED99E46E /* Pods_WebIOPi_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
-		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		7829F9731E0F94C5000B7927 /* WebIOPi.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 7829F9721E0F94C5000B7927 /* WebIOPi.podspec */; };
 		78B861181E121EB200EA764A /* GPIOConfigurationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B861171E121EB200EA764A /* GPIOConfigurationSpec.swift */; };
 		78B861211E12253B00EA764A /* GPIOConfiguration-Valid.json in Resources */ = {isa = PBXBuildFile; fileRef = 78B861201E12253B00EA764A /* GPIOConfiguration-Valid.json */; };
 		78B861231E12263400EA764A /* SampleDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B861221E12263400EA764A /* SampleDataUtils.swift */; };
+		78B861251E12CD5000EA764A /* HostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B861241E12CD5000EA764A /* HostsTableViewController.swift */; };
+		78B861271E12E05700EA764A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78B861261E12E05700EA764A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +37,8 @@
 		607FACD01AFB9204008FA782 /* WebIOPi_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebIOPi_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* WebIOPi_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebIOPi_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		617BE2F178E6CF74C22A35D5 /* Pods_WebIOPi_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebIOPi_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +47,8 @@
 		78B861171E121EB200EA764A /* GPIOConfigurationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPIOConfigurationSpec.swift; sourceTree = "<group>"; };
 		78B861201E12253B00EA764A /* GPIOConfiguration-Valid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "GPIOConfiguration-Valid.json"; sourceTree = "<group>"; };
 		78B861221E12263400EA764A /* SampleDataUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleDataUtils.swift; sourceTree = "<group>"; };
+		78B861241E12CD5000EA764A /* HostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostsTableViewController.swift; sourceTree = "<group>"; };
+		78B861261E12E05700EA764A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B09348AFB1A285AEDC30F031 /* Pods-WebIOPi_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebIOPi_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebIOPi_Example/Pods-WebIOPi_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B1DC249A58761E5310752808 /* Pods-WebIOPi_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebIOPi_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebIOPi_Tests/Pods-WebIOPi_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E26F90FD563300E8C46A8D2B /* Pods-WebIOPi_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebIOPi_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebIOPi_Example/Pods-WebIOPi_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,10 +99,10 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				78B861241E12CD5000EA764A /* HostsTableViewController.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				78B861261E12E05700EA764A /* LaunchScreen.storyboard */,
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for WebIOPi";
@@ -265,8 +265,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				7829F9731E0F94C5000B7927 /* WebIOPi.podspec in Resources */,
+				78B861271E12E05700EA764A /* LaunchScreen.storyboard in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,8 +393,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				78B861251E12CD5000EA764A /* HostsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,14 +424,6 @@
 				607FACDA1AFB9204008FA782 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDF1AFB9204008FA782 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
