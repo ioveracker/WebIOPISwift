@@ -14,7 +14,6 @@ public struct GPIOConfiguration {
     /// - parameter json: A dictionary containing GPIO configuration JSON.
     init(json: [String: Any]) {
         var pins = [Int: GPIOPin]()
-        let gpio = json["GPIO"]
         if let gpioDictionary = json["GPIO"] as? [String: [String: Any]] {
             for (pinNumberString, details) in gpioDictionary {
                 guard let
