@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--WebIOPI Example-->
+        <!--WebIOPi Example-->
         <scene sceneID="srP-ID-Ylh">
             <objects>
                 <tableViewController id="mEg-T0-3Pc" customClass="HostsTableViewController" customModule="WebIOPi_Example" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,11 +22,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="isn-lR-Ov1" id="lfM-vk-1VR">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="http://raspberrypi.local" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EIy-8n-CDX">
-                                            <rect key="frame" x="15" y="0.0" width="325" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -34,6 +34,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="fDT-58-vJp" kind="show" identifier="ShowGPIOSegue" id="Odg-fZ-e7L"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -41,7 +44,7 @@
                             <outlet property="delegate" destination="mEg-T0-3Pc" id="iuU-cc-NaR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="WebIOPI Example" id="VfE-mX-T8o">
+                    <navigationItem key="navigationItem" title="WebIOPi Example" id="VfE-mX-T8o">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FT0-9W-wrT">
                             <connections>
                                 <action selector="addHostButtonTapped:" destination="mEg-T0-3Pc" id="MVd-QX-0zR"/>
@@ -52,6 +55,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83H-eO-9TX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1391" y="-268"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="gQK-Fg-9T7">
+            <objects>
+                <tableViewController id="fDT-58-vJp" customClass="GPIOTableViewController" customModule="WebIOPi_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zDH-YZ-f3I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GeneralInfoCell" textLabel="KBV-ck-09Y" detailTextLabel="vCF-Tu-QIq" style="IBUITableViewCellStyleValue1" id="oM6-Bz-8ex">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oM6-Bz-8ex" id="qZP-70-bmE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="UART" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KBV-ck-09Y">
+                                            <rect key="frame" x="15" y="12" width="44.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vCF-Tu-QIq">
+                                            <rect key="frame" x="352" y="12" width="8" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PinCell" textLabel="dkd-bA-FGD" detailTextLabel="GTp-Pv-BFg" style="IBUITableViewCellStyleValue1" id="a4q-tP-9TM">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a4q-tP-9TM" id="NpW-xj-UCy">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dkd-bA-FGD">
+                                            <rect key="frame" x="15" y="12" width="10.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="OUT, 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GTp-Pv-BFg">
+                                            <rect key="frame" x="289" y="12" width="51" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fDT-58-vJp" id="6fg-JT-kd2"/>
+                            <outlet property="delegate" destination="fDT-58-vJp" id="wwC-cu-8bE"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NWC-FW-Akk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2204" y="-269"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TGr-NS-46F">

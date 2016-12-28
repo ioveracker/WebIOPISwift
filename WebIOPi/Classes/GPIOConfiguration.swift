@@ -3,11 +3,11 @@ import Foundation
 /// The configuration of the GPIO header on the Raspberry Pi.
 public struct GPIOConfiguration {
 
-    let oneWire: Int?
-    let SPI: Int?
-    let I2C: Int?
-    let UART: Int?
-    let GPIOPins: [Int: GPIOPin]
+    public let oneWire: Int?
+    public let SPI: Int?
+    public let I2C: Int?
+    public let UART: Int?
+    public let GPIOPins: [Int: GPIOPin]
 
     /// Initializes a new `GPIOConfiguration` object populated with values from the given JSON.
     ///
@@ -25,6 +25,7 @@ public struct GPIOConfiguration {
                 }
 
                 pins[pinNumber] = GPIOPin(
+                    number: pinNumber,
                     value: Value.makeFromInt(int: value),
                     function: Function.makeFromString(string: function))
             }

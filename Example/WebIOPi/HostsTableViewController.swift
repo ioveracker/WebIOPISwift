@@ -12,11 +12,12 @@ import WebIOPi
 class HostsTableViewController: UITableViewController {
 
     fileprivate var hosts = [WebIOPi]()
+    fileprivate var selectedHost: WebIOPi?
 
     @IBAction func addHostButtonTapped(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(
             title: "Add Host",
-            message: "Enter the host URL:",
+            message: nil,
             preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -44,6 +45,15 @@ class HostsTableViewController: UITableViewController {
         }
 
         present(alert, animated: true, completion: nil)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let gpioController = segue.destination as? GPIOTableViewController {
+            if let cell = sender as? UITableViewCell,
+               let indexPath = tableView.indexPath(for: cell) {
+                gpioController.pi = hosts[indexPath.row]
+            }
+        }
     }
 
     // MARK: UITableViewDataSource

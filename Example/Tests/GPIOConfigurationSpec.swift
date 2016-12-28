@@ -19,6 +19,7 @@ class GPIOConfigurationSpec: QuickSpec {
                 expect(gpioConfig.GPIOPins.count) == 54
 
                 if let pin50 = gpioConfig.GPIOPins[50] {
+                    expect(pin50.number) == 50
                     expect(pin50.function) == .alt0
                     expect(pin50.value) == .on
                 } else {
