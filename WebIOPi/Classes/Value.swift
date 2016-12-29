@@ -20,4 +20,13 @@ public enum Value {
         return nil
     }
 
+    public func toggled() -> Value {
+        switch self {
+        case .on:
+            return .off
+        case .off:
+            return .on
+        }
+    }
+
 }

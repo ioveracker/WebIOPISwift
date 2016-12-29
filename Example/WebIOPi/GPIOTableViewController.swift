@@ -44,6 +44,15 @@ class GPIOTableViewController: UITableViewController {
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let pinController = segue.destination as? PinTableViewController {
+            if let cell = sender as? UITableViewCell,
+                let indexPath = tableView.indexPath(for: cell) {
+                pinController.pin = pins[indexPath.row]
+            }
+        }
+    }
+
     // MARK: UITableViewDataSource
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -61,13 +70,14 @@ class GPIOTableViewController: UITableViewController {
         return nil
     }
 
+    let numberOfGeneralInfoCells = 4
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard GPIOConfiguration != nil else {
             return 0
         }
 
         if section == 0 {
-            return 4
+            return numberOfGeneralInfoCells
         } else if section == 1 {
             return pins.count
         }
@@ -106,7 +116,6 @@ class GPIOTableViewController: UITableViewController {
 
         return UITableViewCell()
     }
-
 
 }
 
