@@ -8,7 +8,8 @@ class GPIOConfigurationSpec: QuickSpec {
         describe("A GPIOConfiguration") {
             it("can be created from valid JSON") {
                 let validJSON = sampleJSON(filename: "GPIOConfiguration-Valid")
-                let gpioConfig = GPIOConfiguration(json: validJSON)
+                let pi = WebIOPi(host: "")
+                let gpioConfig = GPIOConfiguration(pi: pi, json: validJSON)
 
                 expect(gpioConfig).toNot(beNil())
                 expect(gpioConfig.I2C) == 0

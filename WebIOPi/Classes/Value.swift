@@ -9,6 +9,15 @@ public enum Value {
     /// Turn the pin off (LOW).
     case off
 
+    var intValue: Int {
+        switch self {
+        case .on:
+            return 1
+        case .off:
+            return 0
+        }
+    }
+
     /// Attempts to create a Value from the given Int.
     public static func makeFromInt(int: Int) -> Value? {
         if int == 0 {

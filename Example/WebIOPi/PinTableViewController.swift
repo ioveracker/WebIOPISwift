@@ -96,16 +96,23 @@ private extension PinTableViewController {
             return
         }
 
-        print("New function selected: \(function)")
-//        pin.function = function
+        pin.changeFunction(to: function) { status in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     func toggleValue() {
-        guard let oldValue = pin?.value else {
+        guard let pin = pin else {
             return
         }
 
-        print("Toggled value. \(oldValue) -> \(oldValue.toggled())")
+        pin.changeValue(to: pin.value!.toggled()) { status in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
 }

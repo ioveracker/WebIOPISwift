@@ -12,7 +12,7 @@ public struct GPIOConfiguration {
     /// Initializes a new `GPIOConfiguration` object populated with values from the given JSON.
     ///
     /// - parameter json: A dictionary containing GPIO configuration JSON.
-    init(json: [String: Any]) {
+    init(pi: WebIOPi, json: [String: Any]) {
         var pins = [Int: GPIOPin]()
         if let gpioDictionary = json["GPIO"] as? [String: [String: Any]] {
             for (pinNumberString, details) in gpioDictionary {
@@ -25,9 +25,10 @@ public struct GPIOConfiguration {
                 }
 
                 pins[pinNumber] = GPIOPin(
+                    pi: pi,
                     number: pinNumber,
-                    value: Value.makeFromInt(int: value),
-                    function: Function.makeFromString(string: function))
+                    function: Function.makeFromString(string: function)!,
+                    value: Value.makeFromInt(int: value)!)
             }
         }
 
