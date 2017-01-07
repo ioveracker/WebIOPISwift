@@ -23,7 +23,7 @@ public class GPIOPin {
 
     public func changeFunction(to function: Function,
                                         completion: @escaping ((Status) -> Void)) {
-        pi.GPIO.set(pin: number, function: function) { status in
+        pi.GPIO.setFunction(function, pin: number) { status in
             if status == .ok {
                 self.function = function
             }
@@ -34,13 +34,23 @@ public class GPIOPin {
 
     public func changeValue(to value: Value,
                             completion: @escaping ((Status) -> Void)) {
-        print("changing value to \(value)")
-        pi.GPIO.set(pin: number, value: value) { status in
-            print("status: \(status)")
+        pi.GPIO.setValue(value, pin: number) { status in
             if status == .ok {
                 self.value = value
             }
 
+            completion(status)
+        }
+    }
+
+    public func pulse(completion: @escaping ((Status) -> Void)) {
+        pi.GPIO.pulse(pin: number) { status in
+            completion(status)
+        }
+    }
+
+    public func runSequence(_ sequence: [Value], delay: Int, completion: @escaping ((Status) -> Void)) {
+        pi.GPIO.runSequence(sequence, delay: delay, pin: number) { status in
             completion(status)
         }
     }

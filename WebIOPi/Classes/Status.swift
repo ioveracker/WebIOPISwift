@@ -21,18 +21,23 @@ public enum Status {
     /// Attempts to create a Status object from the given HTTP status code.
     ///
     /// - parameter code: An HTTP status code.
-    public static func makeFromHTTPStatusCode(code: Int) -> Status? {
-        if code == 200 {
+    public static func makeFromURLResponse(_ response: URLResponse?) -> Status {
+        guard let httpResponse = response as? HTTPURLResponse else {
+            return .notFound // TODO: Should this return a different status?
+        }
+
+        let statusCode = httpResponse.statusCode
+        if statusCode == 200 {
             return .ok
-        } else if code == 400 {
+        } else if statusCode == 400 {
             return .badRequest
-        } else if code == 403 {
+        } else if statusCode == 403 {
             return .pinUnavailable
-        } else if code == 404 {
+        } else if statusCode == 404 {
             return .notFound
         }
 
-        return nil
+        return .badRequest
     }
 
 }

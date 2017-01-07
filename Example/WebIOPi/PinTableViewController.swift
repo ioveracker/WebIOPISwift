@@ -11,6 +11,9 @@ import WebIOPi
 
 class PinTableViewController: UITableViewController {
 
+    var sequenceTextField: UITextField?
+    var delayTextField: UITextField?
+
     /// The GPIO pin presented by this view controller.
     var pin: GPIOPin? {
         didSet {
@@ -24,11 +27,32 @@ class PinTableViewController: UITableViewController {
     // MARK: UITableViewDataSource
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        if section == 0 {
+            return 2
+        } else if section == 1 {
+            return 1
+        } else if section == 2 {
+            return 3
+        }
+
+        return 0
+    }
+
+    override func tableView(_ tableView: UITableView,
+                            titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "General Info"
+        } else if section == 1 {
+            return "Pulse"
+        } else if section == 2 {
+            return "Bit Sequence"
+        }
+
+        return nil
     }
 
     override func tableView(_ tableView: UITableView,
@@ -37,54 +61,80 @@ class PinTableViewController: UITableViewController {
             return UITableViewCell()
         }
 
+        let section = indexPath.section
         let row = indexPath.row
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PinCell")!
 
-        if row == 0 {
-            cell.textLabel?.text = "Function"
-            cell.detailTextLabel?.text = "\(pin.function!)"
-        } else if row == 1 {
-            cell.textLabel?.text = "Value"
-            cell.detailTextLabel?.text = "\(pin.value!)"
+        var cell: UITableViewCell!
+
+        if section == 0 {
+            if row == 0 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "PinCell")!
+                cell.textLabel?.text = "Function"
+                cell.detailTextLabel?.text = "\(pin.function!)"
+            } else if row == 1 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "PinCell")!
+                cell.textLabel?.text = "Value"
+                cell.detailTextLabel?.text = "\(pin.value!)"
+            }
+        } else if section == 1 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "PulseCell")!
+        } else if section == 2 {
+            if row == 0 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "SequenceCell")!
+                sequenceTextField = cell.contentView.subviews.first as? UITextField
+            } else if row == 1 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "DelayCell")!
+                delayTextField = cell.contentView.subviews.first as? UITextField
+            } else {
+                cell = tableView.dequeueReusableCell(withIdentifier: "SendSequenceCell")!
+            }
         }
 
-        return cell
+        return cell ?? UITableViewCell()
     }
 
     // MARK: UITableViewDelegate
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = indexPath.section
         let row = indexPath.row
 
-        if row == 0 {
-            let actionSheet = UIAlertController(
-                title: "Select function",
-                message: nil,
-                preferredStyle: .actionSheet)
+        if section == 0 {
+            if row == 0 {
+                let actionSheet = UIAlertController(
+                    title: "Select function",
+                    message: nil,
+                    preferredStyle: .actionSheet)
 
-            for fn in Function.all {
+                for fn in Function.all {
+                    actionSheet.addAction(
+                        UIAlertAction(
+                            title: "\(fn)",
+                            style: .default,
+                            handler: { (action) in
+                                self.newFunctionSelected(function: fn)
+                        }))
+                }
+
                 actionSheet.addAction(
                     UIAlertAction(
-                        title: "\(fn)",
-                        style: .default,
-                        handler: { (action) in
-                            self.newFunctionSelected(function: fn)
-                            tableView.deselectRow(at: indexPath, animated: true)
-                    }))
+                        title: "Cancel",
+                        style: .cancel,
+                        handler: nil))
+
+                present(actionSheet, animated: true, completion: nil)
+            } else if row == 1 {
+                toggleValue()
             }
-
-            actionSheet.addAction(
-                UIAlertAction(
-                    title: "Cancel",
-                    style: .cancel,
-                    handler: { _ in
-                        tableView.deselectRow(at: indexPath, animated: true)
-                }))
-
-            present(actionSheet, animated: true, completion: nil)
-        } else if row == 1 {
-            toggleValue()
+        } else if section == 1 {
+            sendPulse()
+        } else if section == 2 {
+            if row == 2 {
+                sendSequence()
+            }
         }
+
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }
@@ -112,6 +162,38 @@ private extension PinTableViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+        }
+    }
+
+    func sendPulse() {
+        guard let pin = pin else {
+            return
+        }
+
+        pin.pulse { (status) in
+        }
+    }
+
+    func sendSequence() {
+        guard let pin = pin,
+              let delayText = delayTextField?.text,
+              let delay = Int(delayText),
+              let sequenceText = sequenceTextField?.text else {
+            return
+        }
+
+        var sequence = [Value]()
+        for index in sequenceText.characters.indices {
+            let character = sequenceText[index]
+            let string = String(character)
+
+            if let int = Int(string), let value = Value.makeFromInt(int: int) {
+                sequence.append(value)
+            }
+        }
+
+        pin.runSequence(sequence, delay: delay) { status in
+            print("ran sequence. status: \(status)")
         }
     }
 

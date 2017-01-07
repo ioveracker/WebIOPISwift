@@ -13,9 +13,9 @@ public class GPIOType {
     public func getConfiguration(completion: @escaping ((Status, GPIOConfiguration?) -> Void)) {
         let url = pi.url.appendingPathComponent("/*")
         session.dataTask(with: url) { data, response, error in
-            guard error == nil else {
-                // TODO: Check error status code.
-                completion(.notFound, nil)
+            let status = Status.makeFromURLResponse(response)
+            if status != .ok {
+                completion(status, nil)
                 return
             }
 
@@ -29,37 +29,50 @@ public class GPIOType {
             }
 
             let config = GPIOConfiguration(pi: self.pi, json: json)
-            completion(.ok, config)
+            completion(status, config)
         }.resume()
     }
 
-    public func set(pin: Int, function: Function, completion: @escaping ((Status) -> Void)) {
-        let url = pi.url.appendingPathComponent("/GPIO/\(pin)/function/\(function)")
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        session.dataTask(with: request) { data, response, error in
-            guard let httpResponse = response as? HTTPURLResponse else {
-                completion(.notFound)
-                return
-            }
+    public func setFunction(_ function: Function, pin: Int, completion: @escaping ((Status) -> Void)) {
+        post(url: pi.url.appendingPathComponent("/GPIO/\(pin)/function/\(function)"),
+             completion: completion)
+    }
 
-            completion(Status.makeFromHTTPStatusCode(code: httpResponse.statusCode) ?? .notFound)
+    public func getFunction(pin: Int, completion: @escaping ((Status) -> Void)) {
+        let url = pi.url.appendingPathComponent("/GPIO/\(pin)/function/")
+        session.dataTask(with: url) { data, response, error in
         }.resume()
     }
 
-    public func set(pin: Int, value: Value, completion: @escaping ((Status) -> Void)) {
-        let url = pi.url.appendingPathComponent("/GPIO/\(pin)/value/\(value.intValue)")
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        session.dataTask(with: request) { data, response, error in
-            guard let httpResponse = response as? HTTPURLResponse else {
-                completion(.notFound)
-                return
-            }
+    public func setValue(_ value: Value, pin: Int, completion: @escaping ((Status) -> Void)) {
+        post(url: pi.url.appendingPathComponent("/GPIO/\(pin)/value/\(value.intValue)"),
+             completion: completion)
+    }
 
-            completion(Status.makeFromHTTPStatusCode(code: httpResponse.statusCode) ?? .notFound)
+    public func pulse(pin: Int, completion: @escaping ((Status) -> Void)) {
+        post(url: pi.url.appendingPathComponent("/GPIO/\(pin)/pulse/"),
+             completion: completion)
+    }
 
-        }.resume()
+    public func runSequence(_ sequence: [Value],
+                            delay: Int,
+                            pin: Int,
+                            completion: @escaping ((Status) -> Void)) {
+        let sequenceString = sequence.reduce("") { "\($0)\($1.intValue)" }
+        post(url: pi.url.appendingPathComponent("/GPIO/\(pin)/sequence/\(delay),\(sequenceString)"),
+             completion: completion)
     }
     
+}
+
+private extension GPIOType {
+
+    func post(url: URL, completion: @escaping ((Status) -> Void)) {
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        session.dataTask(with: request) { data, response, error in
+            completion(Status.makeFromURLResponse(response))
+        }.resume()
+    }
+
 }
