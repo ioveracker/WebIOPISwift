@@ -9,9 +9,11 @@
 import Foundation
 
 func sampleJSON(filename: String) -> [String: Any] {
-    let path = Bundle.main.path(forResource: filename, ofType: "json")
-    let url = URL(fileURLWithPath: path!)
-    // swiftlint:disable:next force_try
+    let bundle = Bundle(for: GPIOConfigurationSpec.self)
+    guard let url = bundle.url(forResource: filename, withExtension: "json") else {
+        fatalError("Failed to load url for resource: \(filename)")
+    }
+
     do {
         let data = try Data(contentsOf: url)
         if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
