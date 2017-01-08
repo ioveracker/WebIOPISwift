@@ -11,7 +11,7 @@ import WebIOPi
 
 class HostsTableViewController: UITableViewController {
 
-    fileprivate var hosts = [WebIOPi(host: "http://192.168.1.120:8000")]
+    fileprivate var hosts = [WebIOPi]()
     fileprivate var selectedHost: WebIOPi?
 
     @IBAction func addHostButtonTapped(_ sender: UIBarButtonItem) {
