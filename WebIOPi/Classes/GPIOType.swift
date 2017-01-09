@@ -38,9 +38,21 @@ public class GPIOType {
              completion: completion)
     }
 
-    public func getFunction(pin: Int, completion: @escaping ((Status) -> Void)) {
-        let url = pi.url.appendingPathComponent("/GPIO/\(pin)/function/")
+    public func getFunction(pin: Int, completion: @escaping ((Status, Function?) -> Void)) {
+        let url = pi.url.appendingPathComponent("/GPIO/\(pin)/function")
         session.dataTask(with: url) { data, response, error in
+            guard let data = data else {
+                completion(.notFound, nil)
+                return
+            }
+
+            guard let string = String(data: data, encoding: .utf8) else {
+                completion(.notFound, nil)
+                return
+            }
+            
+            completion(Status.makeFromURLResponse(response),
+                       Function.makeFromString(string: string))
         }.resume()
     }
 
