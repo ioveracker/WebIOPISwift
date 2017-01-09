@@ -47,7 +47,7 @@ public class GPIOType {
             }
 
             guard let string = String(data: data, encoding: .utf8) else {
-                completion(.notFound, nil)
+                completion(.parseError, nil)
                 return
             }
             
@@ -59,6 +59,29 @@ public class GPIOType {
     public func setValue(_ value: Value, pin: Int, completion: @escaping ((Status) -> Void)) {
         post(url: pi.url.appendingPathComponent("/GPIO/\(pin)/value/\(value.intValue)"),
              completion: completion)
+    }
+
+    public func getValue(pin: Int, completion: @escaping ((Status, Value?) -> Void)) {
+        let url = pi.url.appendingPathComponent("/GPIO/\(pin)/value")
+        session.dataTask(with: url) { data, response, error in
+            guard let data = data else {
+                completion(.notFound, nil)
+                return
+            }
+
+            guard let string = String(data: data, encoding: .utf8) else {
+                completion(.parseError, nil)
+                return
+            }
+
+            guard let int = Int(string) else {
+                completion(.parseError, nil)
+                return
+            }
+
+            completion(Status.makeFromURLResponse(response),
+                       Value.makeFromInt(int: int))
+        }.resume()
     }
 
     public func pulse(pin: Int, completion: @escaping ((Status) -> Void)) {
