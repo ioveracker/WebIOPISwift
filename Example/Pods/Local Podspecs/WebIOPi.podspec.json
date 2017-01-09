@@ -1,20 +1,21 @@
 {
   "name": "WebIOPi",
   "version": "0.1.0",
-  "summary": "A short description of WebIOPi.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/WebIOPi",
+  "summary": "A Swift wrapper for the WebIOPi API.",
+  "description": "Interact with your Raspberry Pi running WebIOPi from Swift!",
+  "homepage": "https://github.com/ioveracker/WebIOPiSwift",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Isaac Overacker": "ioveracker@cbtnuggets.com"
+    "Isaac Overacker": "isaac@overacker.me"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/WebIOPi.git",
+    "git": "https://github.com/ioveracker/WebIOPiSwift.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/ioveracker",
   "platforms": {
     "ios": "8.0"
   },
