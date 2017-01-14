@@ -12,7 +12,7 @@
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
-		7829F9731E0F94C5000B7927 /* WebIOPi.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 7829F9721E0F94C5000B7927 /* WebIOPi.podspec */; };
+		784C0C231E29B1B700FF7081 /* WebIOPi.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 784C0C221E29B1B700FF7081 /* WebIOPi.podspec */; };
 		78AA67D61E15B2B100ECC600 /* PinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA67D51E15B2B100ECC600 /* PinTableViewController.swift */; };
 		78B861181E121EB200EA764A /* GPIOConfigurationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B861171E121EB200EA764A /* GPIOConfigurationSpec.swift */; };
 		78B861211E12253B00EA764A /* GPIOConfiguration-Valid.json in Resources */ = {isa = PBXBuildFile; fileRef = 78B861201E12253B00EA764A /* GPIOConfiguration-Valid.json */; };
@@ -45,7 +45,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		617BE2F178E6CF74C22A35D5 /* Pods_WebIOPi_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebIOPi_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BCFF3EC57EF01C244B9F55 /* Pods-WebIOPi_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebIOPi_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebIOPi_Tests/Pods-WebIOPi_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		7829F9721E0F94C5000B7927 /* WebIOPi.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebIOPi.podspec; sourceTree = "<group>"; };
+		784C0C221E29B1B700FF7081 /* WebIOPi.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WebIOPi.podspec; path = ../WebIOPi.podspec; sourceTree = "<group>"; };
 		78AA67D51E15B2B100ECC600 /* PinTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinTableViewController.swift; sourceTree = "<group>"; };
 		78B861171E121EB200EA764A /* GPIOConfigurationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPIOConfigurationSpec.swift; sourceTree = "<group>"; };
 		78B861201E12253B00EA764A /* GPIOConfiguration-Valid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "GPIOConfiguration-Valid.json"; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				7829F9721E0F94C5000B7927 /* WebIOPi.podspec */,
+				784C0C221E29B1B700FF7081 /* WebIOPi.podspec */,
 				5449668632D63C99757EE2E3 /* README.md */,
 				1ED3F17AB187DEC1A0E45472 /* LICENSE */,
 			);
@@ -272,8 +272,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				7829F9731E0F94C5000B7927 /* WebIOPi.podspec in Resources */,
 				78B861271E12E05700EA764A /* LaunchScreen.storyboard in Resources */,
+				784C0C231E29B1B700FF7081 /* WebIOPi.podspec in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
