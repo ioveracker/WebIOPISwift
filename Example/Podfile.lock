@@ -1,22 +1,27 @@
 PODS:
-  - Nimble (5.1.1)
-  - Quick (1.0.0)
-  - WebIOPi (0.1.0)
+  - Nimble (7.3.1)
+  - Quick (1.3.2)
+  - WebIOPi (0.2.0)
 
 DEPENDENCIES:
-  - Nimble (~> 5.1.1)
-  - Quick (~> 1.0.0)
+  - Nimble
+  - Quick
   - WebIOPi (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Nimble
+    - Quick
 
 EXTERNAL SOURCES:
   WebIOPi:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
-  Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
-  WebIOPi: 2da2d2a1fe37e3f81237dc5ec659e13bf7d10a44
+  Nimble: 04f732da099ea4d153122aec8c2a88fd0c7219ae
+  Quick: 2623cb30d7a7f41ca62f684f679586558f483d46
+  WebIOPi: 99abd15e39908bd4d002ec45f0d230541132057e
 
-PODFILE CHECKSUM: 569ca9165c5226de8f17d15873d6d2f58eaed4ad
+PODFILE CHECKSUM: b0708d45055c5b729c9fcb2bc790207421c6e197
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.5.0

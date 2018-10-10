@@ -183,14 +183,20 @@ private extension PinTableViewController {
         }
 
         var sequence = [Value]()
-        for index in sequenceText.characters.indices {
-            let character = sequenceText[index]
-            let string = String(character)
-
+        for (index, element) in sequenceText.enumerated() {
+            let string = String(element)
             if let int = Int(string), let value = Value.makeFromInt(int: int) {
                 sequence.append(value)
             }
         }
+//        for index in sequenceText.characters.indices {
+//            let character = sequenceText[index]
+//            let string = String(character)
+//
+//            if let int = Int(string), let value = Value.makeFromInt(int: int) {
+//                sequence.append(value)
+//            }
+//        }
 
         pin.runSequence(sequence, delay: delay) { status in
             print("ran sequence. status: \(status)")
