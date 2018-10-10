@@ -1,6 +1,6 @@
 {
   "name": "WebIOPi",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "summary": "A Swift wrapper for the WebIOPi API.",
   "description": "Interact with your Raspberry Pi running WebIOPi from Swift!",
   "homepage": "https://github.com/ioveracker/WebIOPiSwift",
@@ -13,11 +13,12 @@
   },
   "source": {
     "git": "https://github.com/ioveracker/WebIOPiSwift.git",
-    "tag": "0.1.0"
+    "tag": "0.2.0"
   },
   "social_media_url": "https://twitter.com/ioveracker",
   "platforms": {
-    "ios": "8.0"
+    "ios": "8.0",
+    "watchos": "3.0"
   },
   "source_files": "WebIOPi/Classes/**/*"
 }
