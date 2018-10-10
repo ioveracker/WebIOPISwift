@@ -40,7 +40,7 @@ pod "WebIOPi"
 
 ## Roadmap
 
-### v0.1.0 (Current)
+### v0.1.0
 Basic GPIO functions.
 - [x] Get GPIO configuration
 - [x] Get and set pin function
@@ -48,7 +48,10 @@ Basic GPIO functions.
 - [x] Send pulse to a pin
 - [x] Send a bit sequence to a pin
 
-### v1.0.0 (Future)
+### v0.2.0
+Apple Watch support.
+
+### v1.0.0
 All API calls exposed.
 - [ ] PWM
 - [ ] Macros
